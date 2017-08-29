@@ -1,22 +1,21 @@
 
 
 /* ==========================================================================
-   Author's custom styles
+Js-calculator custom styles
    ========================================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Main */
+.container {
+    max-width: 350px;
+    margin-top: 100px;
+    border: 1px solid red !important;
+}
+/* Display */
+#display {
+    min-height: 60px;
+}
+/* Buttons */
+.btn {
+    min-height: 60px;
+    border: 1px solid red !important;
+}
