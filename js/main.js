@@ -139,4 +139,6 @@ $(document).ready(function(){
     function display(displayValue){
         return document.getElementById("display").innerHTML = displayValue;
     }
+
+    /* TODO: have input limit - goning off screen. try overflow hidden */
 });

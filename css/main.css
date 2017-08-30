@@ -5,17 +5,88 @@ Js-calculator custom styles
    ========================================================================== */
 
 /* Main */
+body {
+  height: 100%;
+  width: 100%;
+  background: url('../img/bg2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .container {
-    max-width: 350px;
-    margin-top: 100px;
-    border: 1px solid red !important;
+    max-width: 370px;
+    margin-top: 40px;
+    border: 4px solid #282828;
+    -webkit-box-shadow: 1px 1px 10px 0px #000000;
+    box-shadow: 1px 1px 10px 0px #000000;
 }
 /* Display */
 #display {
-    min-height: 60px;
+    min-height: 50px;
+    border: 3px solid #000000 !important;
+    background-color: #101010;
+    color: #00DDFF;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 2em;
+    direction: rtl;
+    overflow:hidden;
+    /*TODO: see if you can have a touch scroll to see long answers that are overflown */
+
+}
+#equation {
+    min-height: 50px;
+    border: 3px solid #000000 !important;
+    background-color: #101010;
+    color: #00DDFF;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 2em;
+    direction: rtl;
+    overflow:hidden;
+    /*TODO: see if you can have a touch scroll to see long answers that are overflown */
+
 }
 /* Buttons */
 .btn {
-    min-height: 60px;
-    border: 1px solid red !important;
+    min-height: 50px;
+    border: 1px solid #000000 !important;
+    border-radius: 0;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 1.1em;
+    color: #cccccc;
+    line-height: 300%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#191919+0,212121+100 */
+    background: #191919; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #191919 0%, #212121 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #191919 0%,#212121 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #191919 0%,#212121 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#191919', endColorstr='#212121',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+#back, #divide, #multiply, #plus, #minus {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#191919+0,003439+100 */
+    background: #191919; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #191919 0%, #003439 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #191919 0%,#003439 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #191919 0%,#003439 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#191919', endColorstr='#003439',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+#ac, #equals {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b24b00+0,ad6634+100 */
+    background: #b24b00; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #b24b00 0%, #ad6634 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #b24b00 0%,#ad6634 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #b24b00 0%,#ad6634 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b24b00', endColorstr='#ad6634',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/* Btn hover */
+.btn:hover {
+    color: #B24F00;
+    border: 1px solid #B24F00 !important;
+}
+#ac:hover, #equals:hover {
+    color: #003139;
+    border: 1px solid #003139 !important;
 }
