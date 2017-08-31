@@ -10,7 +10,6 @@ $(document).ready(function(){
     /* Delete any zero in front. If empty put back a zero. Also check if first letter is symbol */
     function correctMistakes(){
         if((displayValue[0] === '0' && displayValue[1] !== ".")|| isStrSymbol(displayValue[0])) {
-            console.log("correctMistakes");
             displayValue = displayValue.substr(1); // remove it if user has added
             if(displayValue === ''){
                 displayValue = '0'; // Need at least a zero if it is empty
@@ -23,20 +22,18 @@ $(document).ready(function(){
         inputValue = this.getAttribute("data-value");
 
         /* check if number */
-        if( isStrNum(inputValue) ){
+        if( isStrNum(inputValue) ){ /* Check for number */
             displayValue = displayValue + inputValue;
             /* Correct any fails */
             correctMistakes();
-            console.log(displayValue);
             display(displayValue);
 
-        } else if(isStrDotSign(inputValue)) {
+        } else if(isStrDotSign(inputValue)) {   /* Check for fullstop */
 
             displayValue = displayValue + inputValue;
-            console.log("this is stop");
             display(displayValue);
 
-        } else if(isStrEqualSign(inputValue) ){
+        } else if(isStrEqualSign(inputValue) ){ /* Check for equal sign */
             var indexNum = equation.length-1;
 
             /* Check if the last value is still a number then push to equation*/
@@ -54,38 +51,33 @@ $(document).ready(function(){
                 console.log(equation);
                 equation = [];
 
-            } else {
-                console.log("equation NOT ready");
-                console.log(equation);
             }
-        } else {
-
-            if( equation.length > 0 && isStrSymbol(equation[equation.length -1]) ){
-                equation[equation.length-1] = inputValue;
+        } else { /* Default checks for math operators */
+            if( equation.length > 0 && isStrSymbol(equation[equation.length -1]) ){ /* Check if user clicks on a operator again */
+                equation[equation.length-1] = inputValue; /* Replace previous operator */
             } else {
                 equation.push(displayValue);
                 equation.push(inputValue);
             }
 
             display(inputValue);
-            /* temporary store value if CE is pressed */
+            /* temporary store value if back arrow is pressed */
             displayValueTemp = displayValue;
             displayValue = '';
         }
-        console.log(equation);
     };
 
     /* Deal with the cancel */
     var inputCancelAll = function(){
         displayValue = '0';
         equation = [];
+        displayValueTemp = '';
 
         display(displayValue);
     }
 
     /* Cancel last operation */
     var inputCancelLast = function(){
-        console.log(" cancel: "+displayValueTemp);
         // Check if last entry is number then remove
         if(isStrNum(inputValue)){
             displayValue = displayValue.slice(0, -1);
@@ -94,9 +86,7 @@ $(document).ready(function(){
             displayValue = displayValueTemp;
             display(displayValue);
         }
-        console.log(" cancel: "+displayValue);
         display(displayValue);
-        console.log(equation);
     }
 
     /* Add a listener for numbers */
